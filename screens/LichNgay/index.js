@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { View, Text, ImageBackground, StatusBar } from 'react-native';
 import Sunset from '../../assets/images/background/sunset.jpg'
 
 export default class LichNgay extends Component {
@@ -12,8 +12,9 @@ export default class LichNgay extends Component {
     return (
       <View>
         {/* <ImageBackground source={Sunset} style={{ width: '100%', height: '100%' }}> */}
-          <Text>
-            Lich Ngay
+        <StatusBar hidden />
+        <Text>
+          Lich Ngay
         </Text>
         {/* </ImageBackground> */}
       </View>
