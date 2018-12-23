@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StatusBar } from 'react-native';
-import Sunset from '../../assets/images/background/sunset.jpg'
+import { View, Text, StatusBar } from 'react-native';
+import moment from 'moment';
+
+import DuongLich from '../../components/LichNgay/DuongLich';
 
 export default class LichNgay extends Component {
 
@@ -8,15 +10,21 @@ export default class LichNgay extends Component {
     title: 'Lịch Ngày',
   });
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentMoment: moment()
+    }
+  }
+
   render() {
+    const { currentMoment } = this.state;
+
     return (
       <View>
-        {/* <ImageBackground source={Sunset} style={{ width: '100%', height: '100%' }}> */}
         <StatusBar hidden />
-        <Text>
-          Lich Ngay
-        </Text>
-        {/* </ImageBackground> */}
+        <DuongLich currentMoment={currentMoment} />
       </View>
     );
   }
